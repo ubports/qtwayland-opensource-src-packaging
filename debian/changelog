@@ -1,0 +1,177 @@
+qtwayland-opensource-src (5.9.1-2) xenial; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 16 Aug 2017 15:29:50 +0300
+
+qtwayland-opensource-src (5.9.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.1.
+  * Bump Standards-Version to 4.0.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 07 Jul 2017 10:54:24 +0300
+
+qtwayland-opensource-src (5.9.0-1) experimental; urgency=medium
+
+  * New upstream stable release.
+  * Do not install Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake
+    on armel/armhf.
+  * Bump qtbase build-dependencies to 5.9.0 final.
+  * Add support for nodoc build profile.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 09 Jun 2017 18:37:40 +0300
+
+qtwayland-opensource-src (5.9.0~rc-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * Bump Qt build-dependencies to 5.9.0.
+  * Update libqt5waylandcompositor5-dev.install for the new version.
+  * Drop the hack to remove Qt5Gui_.cmake, it is no longer generated.
+  * Update the symbols files.
+    - In Qt 5.7 the Qt Wayland Compositor library is a technical preview,
+      so API/ABI stability was not guaranteed.
+    - Qt Wayland Client library has no public API, all symbols are private.
+  * Add debian/clean file.
+  * Do not use gold linker, to keep the symbols versioned.
+  * Update debian/copyright.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 28 May 2017 15:14:44 +0300
+
+qtwayland-opensource-src (5.7.1~20161021-2) unstable; urgency=medium
+
+  * Update symbols files with buildds' logs.
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 01 Nov 2016 09:07:54 -0300
+
+qtwayland-opensource-src (5.7.1~20161021-1) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Restore qtbase5-dev build-dependency.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * New upstream snapshot.
+    - Bump Qt build dependencies.
+  * Update symbols files with current build log.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 25 Oct 2016 19:48:50 -0300
+
+qtwayland-opensource-src (5.7.0-1) experimental; urgency=medium
+
+  [ Harald Sitter ]
+  * New upstream release.
+  * New build depends on qtdeclarative5-private-dev
+  * New package qtwayland5-examples now containing examples
+  * New package libqt5waylandcompositor5 and -dev for new library
+  * New package qml-module-qtwayland-compositor for new qml module
+  * Refine install files to accommodate new library artifacts
+  * Do not install private headers at all as they are unused according to
+    codesearch
+
+  [ Dmitry Shachnev ]
+  * Bump Qt build-dependencies to 5.7.0.
+  * Bump libwayland-dev build-dependency to 1.6.0, following upstream.
+  * Build and install the Qt Wayland Compositor documentation.
+  * Migrate to automatic dbgsym packages.
+  * Massive debian/copyright update.
+  * Update debian/libqt5waylandclient5.symbols. The whole library is private
+    (has no public API), so removed symbols are OK.
+  * Drop libqt5waylandclient5-dev package. This library has no public API.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 09 Jul 2016 00:01:41 +0300
+
+qtwayland-opensource-src (5.6.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 13 Jun 2016 10:06:10 -0300
+
+qtwayland-opensource-src (5.6.1-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Bump Qt build dependencies.
+  * Bump Standards-Version to 3.9.8, no changes required.
+  * Remove a lonely example .pro file. There are no matching sources for it.
+  * Be verbose while removing stuff.
+  * Update symbols files with current build log.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 10 Jun 2016 14:00:30 -0300
+
+qtwayland-opensource-src (5.6.0-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Bump Qt build dependencies.
+  * Also build depend upon qtbase5-dev. This ensures that this source will not
+    migrate to testing before the minimum qtbase version required does even if
+    the version in testing fullfills all the symbols.
+  * Switch debian/watch back to official releases.
+  * Use secure URLs for the repos.
+  * Update Standards-Version to 3.9.7, no changes required.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 19 Mar 2016 14:20:52 -0300
+
+qtwayland-opensource-src (5.6.0~beta-1) experimental; urgency=medium
+
+  * New upstream beta release.
+  * Update debian/watch to track experimental releases (needs to be reverted
+    before uploading 5.6.0 final).
+  * Bump qtbase5-private-dev build-dependency to 5.6.0~beta.
+  * Update debian/libqt5waylandclient5.symbols using migrate-symbols script.
+  * Update debian/libqt5waylandclient5.symbols from amd64 build log.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 05 Jan 2016 22:13:08 +0300
+
+qtwayland-opensource-src (5.5.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 21 Oct 2015 15:41:28 -0300
+
+qtwayland-opensource-src (5.5.1-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Bump Qt build dependencies.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 16 Oct 2015 20:44:52 -0300
+
+qtwayland-opensource-src (5.5.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update debian/copyright.
+  * Bump qtbase5-private-dev build-dependency to 5.5.0.
+  * Bump libwayland-dev build-dependency to 1.4.0.
+  * Add build-dependencies on libinput-dev and libxcomposite-dev.
+  * Update libqt5waylandclient5.symbols.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 26 Aug 2015 18:12:23 +0300
+
+qtwayland-opensource-src (5.4.2-3) unstable; urgency=medium
+
+  * Update symbols files with current build log against gcc5.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 09 Aug 2015 23:13:04 -0300
+
+qtwayland-opensource-src (5.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 23 Jun 2015 12:44:45 -0300
+
+qtwayland-opensource-src (5.4.2-1) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Limit libmtdev-dev and libudev-dev build-dependencies to linux-any.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * New upstream release.
+    - Bump Qt build dependencies.
+  * Update symbols files with current build log.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 02 Jun 2015 18:04:18 -0300
+
+qtwayland-opensource-src (5.4.1-1) experimental; urgency=medium
+
+  * Initial release (closes: #697509).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 03 Mar 2015 13:36:49 +0300

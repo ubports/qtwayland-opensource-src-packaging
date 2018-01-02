@@ -1,0 +1,126 @@
+Source: qtwayland-opensource-src
+Section: libs
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Dmitry Shachnev <mitya57@debian.org>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
+           Sune Vuorela <debian@pusling.com>,
+           Pino Toscano <pino@debian.org>,
+           Timo Jyrinki <timo@debian.org>
+Build-Depends: debhelper (>= 9.20160114~),
+               dpkg-dev (>= 1.17.14),
+               libegl1-mesa-dev,
+               libfontconfig1-dev,
+               libglib2.0-dev,
+               libinput-dev,
+               libmtdev-dev [linux-any],
+               libudev-dev [linux-any],
+               libwayland-dev (>= 1.6.0),
+               libwayland-egl1-mesa | libwayland-egl1,
+               libxcomposite-dev,
+               libxkbcommon-dev (>= 0.2.0),
+               libxrender-dev,
+               pkg-config,
+               pkg-kde-tools,
+               qtbase5-dev (>= 5.9.1+dfsg~),
+               qtbase5-private-dev (>= 5.9.1+dfsg~),
+               qtdeclarative5-private-dev (>= 5.9.1~)
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.1+dfsg~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.9.1+dfsg~) <!nodoc>,
+                     qttools5-dev-tools (>= 5.9.1~) <!nodoc>
+Standards-Version: 4.0.0
+Homepage: http://qt-project.org/
+Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwayland.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt/qtwayland.git
+
+Package: qtwayland5-examples
+Architecture: any
+Multi-Arch: same
+Section: x11
+Pre-Depends: ${misc:Pre-Depends}
+Depends: qml-module-qtwayland-compositor, ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Wayland examples
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains examples of the Qt 5 Wayland module.
+
+Package: libqt5waylandclient5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: QtWayland client library
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the QtWayland client library.
+
+Package: libqt5waylandcompositor5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: QtWayland compositor library
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the QtWayland compositor library.
+
+Package: qml-module-qtwayland-compositor
+Multi-Arch: same
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Wayland Compositor QML module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ The Qt Wayland Compositor modules provide QML types that can be used to
+ create custom display servers supporting the Wayland protocol.
+
+Package: libqt5waylandcompositor5-dev
+Architecture: any
+Section: libdevel
+Multi-Arch: same
+Depends: libqt5waylandcompositor5 (= ${binary:Version}), ${misc:Depends}
+Description: QtWayland compositor development files
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the development files for QtWayland compositor
+ library.
+ .
+ This library is a tech preview and the API will change before the final
+ release. Use at your own risk.
+
+Package: qtwayland5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: QtWayland platform plugin
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the QtWayland platform plugin, which allows users
+ to run Qt 5 applications under Wayland, and the qtwaylandscanner
+ binary.
+
+Package: qtwayland5-doc
+Build-Profiles: <!nodoc>
+Priority: extra
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt 5 Wayland Compositor documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the documentation for the Qt 5 Wayland Compositor
+ library.
+
+Package: qtwayland5-doc-html
+Build-Profiles: <!nodoc>
+Priority: extra
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt 5 Wayland Compositor HTML documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the HTML documentation for the Qt 5 Wayland Compositor
+ library.
