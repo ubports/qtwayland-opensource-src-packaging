@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.9.0~rc amd64 i386
+# SymbolsHelper-Confirmed: 5.9.3 amd64
 libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  Qt_5.0@Qt_5.0 5.7.0
  Qt_5.1@Qt_5.1 5.7.0
@@ -43,6 +43,7 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  _ZN12QWaylandSeat20keyboardFocusChangedEP15QWaylandSurfaceS1_@Qt_5 5.9.0~rc
  _ZN12QWaylandSeat20sendTouchCancelEventEP14QWaylandClient@Qt_5 5.9.0~rc
  _ZN12QWaylandSeat21sendMouseReleaseEventEN2Qt11MouseButtonE@Qt_5 5.9.0~rc
+ _ZN12QWaylandSeat25handleMouseFocusDestroyedEv@Qt_5 5.9.3
  _ZN12QWaylandSeat6keymapEv@Qt_5 5.9.0~rc
  _ZN12QWaylandSeatC1EP18QWaylandCompositor6QFlagsINS_14CapabilityFlagEE@Qt_5 5.9.0~rc
  _ZN12QWaylandSeatC2EP18QWaylandCompositor6QFlagsINS_14CapabilityFlagEE@Qt_5 5.9.0~rc
@@ -185,7 +186,6 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  _ZN15QWaylandPointer11qt_metacallEN11QMetaObject4CallEiPPv@Qt_5 5.7.0
  _ZN15QWaylandPointer11qt_metacastEPKc@Qt_5 5.7.0
  _ZN15QWaylandPointer13outputChangedEv@Qt_5 5.7.0
- _ZN15QWaylandPointer14focusDestroyedEPv@Qt_5 5.7.0
  _ZN15QWaylandPointer15toWaylandButtonEN2Qt11MouseButtonE@Qt_5 5.7.0
  _ZN15QWaylandPointer16staticMetaObjectE@Qt_5 5.7.0
  _ZN15QWaylandPointer18sendMouseMoveEventEP12QWaylandViewRK7QPointFS4_@Qt_5 5.7.0
@@ -194,6 +194,7 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  _ZN15QWaylandPointer19sendMouseWheelEventEN2Qt11OrientationEi@Qt_5 5.7.0
  _ZN15QWaylandPointer20buttonPressedChangedEv@Qt_5 5.7.0
  _ZN15QWaylandPointer21sendMouseReleaseEventEN2Qt11MouseButtonE@Qt_5 5.7.0
+ _ZN15QWaylandPointer23enteredSurfaceDestroyedEPv@Qt_5 5.9.3
  _ZN15QWaylandPointer9addClientEP14QWaylandClientjj@Qt_5 5.7.0
  _ZN15QWaylandPointer9setOutputEP14QWaylandOutput@Qt_5 5.7.0
  _ZN15QWaylandPointerC1EP12QWaylandSeatP7QObject@Qt_5 5.9.0~rc
@@ -217,6 +218,7 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  _ZN15QWaylandSurface18offsetForNextFrameERK6QPoint@Qt_5 5.7.0
  _ZN15QWaylandSurface18sendFrameCallbacksEv@Qt_5 5.7.0
  _ZN15QWaylandSurface19markAsCursorSurfaceEb@Qt_5 5.7.0
+ _ZN15QWaylandSurface20cursorSurfaceChangedEv@Qt_5 5.9.3
  _ZN15QWaylandSurface20subsurfacePlaceAboveEPS_@Qt_5 5.7.0
  _ZN15QWaylandSurface20subsurfacePlaceBelowEPS_@Qt_5 5.7.0
  _ZN15QWaylandSurface25contentOrientationChangedEv@Qt_5 5.7.0
@@ -1794,10 +1796,14 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  _ZN22QWaylandIviApplicationC1Ev@Qt_5 5.9.0~rc
  _ZN22QWaylandIviApplicationC2EP18QWaylandCompositor@Qt_5 5.9.0~rc
  _ZN22QWaylandIviApplicationC2Ev@Qt_5 5.9.0~rc
+ _ZN22QWaylandPointerPrivate10sendButtonEN2Qt11MouseButtonEj@Qt_5_PRIVATE_API 5.9.2
+ _ZN22QWaylandPointerPrivate10sendMotionEv@Qt_5_PRIVATE_API 5.9.3
+ _ZN22QWaylandPointerPrivate13ensureEnteredEP15QWaylandSurface@Qt_5_PRIVATE_API 5.9.3
  _ZN22QWaylandPointerPrivate15pointer_releaseEPN15QtWaylandServer10wl_pointer8ResourceE@Qt_5_PRIVATE_API 5.7.0
  _ZN22QWaylandPointerPrivate18pointer_set_cursorEPN15QtWaylandServer10wl_pointer8ResourceEjP11wl_resourceii@Qt_5_PRIVATE_API 5.7.0
- _ZN22QWaylandPointerPrivate24pointer_destroy_resourceEPN15QtWaylandServer10wl_pointer8ResourceE@Qt_5_PRIVATE_API 5.7.0
  _ZN22QWaylandPointerPrivate6s_roleE@Qt_5_PRIVATE_API 5.7.0
+ _ZN22QWaylandPointerPrivate9sendEnterEP15QWaylandSurface@Qt_5_PRIVATE_API 5.9.3
+ _ZN22QWaylandPointerPrivate9sendLeaveEv@Qt_5_PRIVATE_API 5.9.3
  _ZN22QWaylandPointerPrivateC1EP15QWaylandPointerP12QWaylandSeat@Qt_5_PRIVATE_API 5.9.0~rc
  _ZN22QWaylandPointerPrivateC2EP15QWaylandPointerP12QWaylandSeat@Qt_5_PRIVATE_API 5.9.0~rc
  _ZN22QWaylandSurfaceGrabber11qt_metacallEN11QMetaObject4CallEiPPv@Qt_5 5.7.0
@@ -2869,7 +2875,6 @@ libQt5WaylandCompositor.so.5 libqt5waylandcompositor5 #MINVER#
  (c++)"non-virtual thunk to QWaylandKeyboardPrivate::~QWaylandKeyboardPrivate()@Qt_5_PRIVATE_API" 5.7.0
  (c++)"non-virtual thunk to QWaylandOutputPrivate::output_bind_resource(QtWaylandServer::wl_output::Resource*)@Qt_5_PRIVATE_API" 5.7.0
  (c++)"non-virtual thunk to QWaylandOutputPrivate::~QWaylandOutputPrivate()@Qt_5_PRIVATE_API" 5.7.0
- (c++)"non-virtual thunk to QWaylandPointerPrivate::pointer_destroy_resource(QtWaylandServer::wl_pointer::Resource*)@Qt_5_PRIVATE_API" 5.7.0
  (c++)"non-virtual thunk to QWaylandPointerPrivate::pointer_release(QtWaylandServer::wl_pointer::Resource*)@Qt_5_PRIVATE_API" 5.7.0
  (c++)"non-virtual thunk to QWaylandPointerPrivate::pointer_set_cursor(QtWaylandServer::wl_pointer::Resource*, unsigned int, wl_resource*, int, int)@Qt_5_PRIVATE_API" 5.7.0
  (c++)"non-virtual thunk to QWaylandQtWindowManagerPrivate::windowmanager_bind_resource(QtWaylandServer::qt_windowmanager::Resource*)@Qt_5_PRIVATE_API" 5.9.0~rc

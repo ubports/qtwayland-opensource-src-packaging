@@ -1,13 +1,14 @@
 Source: qtwayland-opensource-src
 Section: libs
 Priority: optional
-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Dmitry Shachnev <mitya57@debian.org>,
            Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
            Sune Vuorela <debian@pusling.com>,
            Pino Toscano <pino@debian.org>,
            Timo Jyrinki <timo@debian.org>
-Build-Depends: debhelper (>= 9.20160114~),
+Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.17.14),
                libegl1-mesa-dev,
                libfontconfig1-dev,
@@ -22,13 +23,12 @@ Build-Depends: debhelper (>= 9.20160114~),
                libxrender-dev,
                pkg-config,
                pkg-kde-tools,
-               qtbase5-dev (>= 5.9.1+dfsg~),
-               qtbase5-private-dev (>= 5.9.1+dfsg~),
-               qtdeclarative5-private-dev (>= 5.9.1~)
-Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.1+dfsg~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.6.0~) <!nodoc>,
-                     qttools5-dev-tools (>= 5.9.1~) <!nodoc>
-Standards-Version: 4.0.0
+               qtbase5-dev (>= 5.9.3+dfsg~),
+               qtbase5-private-dev (>= 5.9.3~),
+               qtdeclarative5-private-dev (>= 5.9.3~)
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.3+dfsg~) <!nodoc>,
+                     qttools5-dev-tools (>= 5.9.3~) <!nodoc>
+Standards-Version: 4.1.1
 Homepage: http://qt-project.org/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwayland.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt/qtwayland.git
@@ -88,6 +88,19 @@ Description: QtWayland compositor development files
  This library is a tech preview and the API will change before the final
  release. Use at your own risk.
 
+Package: qtwayland5-dev-tools
+Architecture: any
+Multi-Arch: foreign
+Section: devel
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: qtwayland5 (<< 5.9.2-2~)
+Replaces: qtwayland5 (<< 5.9.2-2~)
+Description: Qt 5 Wayland developer tools
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the QtWayland developer tools.
+ At the moment there is only qtwaylandscanner tool here.
+
 Package: qtwayland5
 Architecture: any
 Multi-Arch: same
@@ -101,7 +114,6 @@ Description: QtWayland platform plugin
 
 Package: qtwayland5-doc
 Build-Profiles: <!nodoc>
-Priority: extra
 Architecture: all
 Section: doc
 Depends: ${misc:Depends}
@@ -114,7 +126,6 @@ Description: Qt 5 Wayland Compositor documentation
 
 Package: qtwayland5-doc-html
 Build-Profiles: <!nodoc>
-Priority: extra
 Architecture: all
 Section: doc
 Depends: ${misc:Depends}
