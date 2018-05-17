@@ -25,20 +25,13 @@ override_dh_auto_install-indep:
 override_dh_auto_install-arch:
 	dh_auto_install
 
-	# libQt5WaylandClient library has no public API, do not ship development files for it
-	rm -rfv debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/qt5/QtWaylandClient/
-	rm -rfv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/Qt5WaylandClient/
-	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WaylandClient.la
-	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WaylandClient.prl
-	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WaylandClient.so
-	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/Qt5WaylandClient.pc
-	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/mkspecs/modules/qt_lib_waylandclient.pri
-
 	# Remove libtool-like file
 	rm -vf debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WaylandCompositor.la
+	rm -fv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WaylandClient.la
 
 	# Remove private elements.
 	rm -rvf debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/qt5/QtWaylandCompositor/*/QtWaylandCompositor/private
+	rm -rvf debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/qt5/QtWaylandClient/*/QtWaylandClient/private/
 	rm -fv debian/tmp/usr/lib/*/qt5/mkspecs/modules/qt_lib_*_private.pri
 
 override_dh_missing:

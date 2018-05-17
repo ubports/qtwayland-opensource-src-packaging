@@ -1,8 +1,31 @@
-qtwayland-opensource-src (5.9.3-0ubports2) xenial; urgency=medium
+qtwayland-opensource-src (5.9.5-0ubports1) xenial; urgency=medium
 
-  * Build for xenial 
+  * New upstream release.
 
- -- Marius <mariogrip@ubuntu.com>  Sun, 25 Feb 2018 01:07:38 +0100
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 14 Apr 2018 15:29:01 -0500
+
+qtwayland-opensource-src (5.9.4-0ubuntu2) bionic; urgency=medium
+
+  * Cherry-pick commit from the VCS Git repository which generates
+    libqt5waylandclient5-dev (LP: #1760185).
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Generate libqt5waylandclient5-dev. The files where previously generated
+    and removed before packaging because they where not stable, but now a part
+    of them have become stable so it's time to ship them.
+    Also make the package recommend qtwayland5-dev-tools which provides the
+    tools necessary to generate C++ interfaces form the XML definitions.
+    Thanks Andreas Cord-Landwehr for the bug report! (Closes: #893387).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 30 Mar 2018 23:52:29 -0500
+
+qtwayland-opensource-src (5.9.4-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+  * Add dont-create-hidden-egl-surfaces.patch which fixes a crash in a Wayland
+    session when a QQuickWindow hides and then is destroyed.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 25 Feb 2018 20:49:52 -0600
 
 qtwayland-opensource-src (5.9.3-0ubuntu1) bionic; urgency=medium
 

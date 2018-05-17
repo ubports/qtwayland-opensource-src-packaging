@@ -23,11 +23,12 @@ Build-Depends: debhelper (>= 9),
                libxrender-dev,
                pkg-config,
                pkg-kde-tools,
-               qtbase5-dev (>= 5.9.3+dfsg~),
-               qtbase5-private-dev (>= 5.9.3~),
-               qtdeclarative5-private-dev (>= 5.9.3~)
-Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.3+dfsg~) <!nodoc>,
-                     qttools5-dev-tools (>= 5.9.3~) <!nodoc>
+               qtbase5-dev (>= 5.9.5+dfsg~),
+               qtbase5-private-dev (>= 5.9.5~),
+               qtdeclarative5-private-dev (>= 5.9.5~)
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.5+dfsg~) <!nodoc>,
+                     qtbase5-doc-html,
+                     qttools5-dev-tools (>= 5.9.5~) <!nodoc>
 Standards-Version: 4.1.1
 Homepage: http://qt-project.org/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwayland.git
@@ -87,6 +88,18 @@ Description: QtWayland compositor development files
  .
  This library is a tech preview and the API will change before the final
  release. Use at your own risk.
+
+Package: libqt5waylandclient5-dev
+Architecture: any
+Section: libdevel
+Multi-Arch: same
+Depends: libqt5waylandclient5 (= ${binary:Version}), ${misc:Depends}
+Recommends: qtwayland5-dev-tools
+Description: QtWayland client development files
+ QtWayland is a Qt 5 module that wraps the functionality of Wayland.
+ .
+ This package contains the development files for QtWayland client
+ library.
 
 Package: qtwayland5-dev-tools
 Architecture: any
